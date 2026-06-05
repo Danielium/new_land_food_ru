@@ -2,6 +2,7 @@ window.recipeCatalog = [
   {
     id: 67,
     name: 'Шакшука с беконом',
+    url: 'https://food.ru/recipes/272671-shakshuka-s-bekonom',
     cuisine: 'Азиатская',
     meal_type: 'breakfast',
     cooking_time_min: 25,
@@ -16,6 +17,7 @@ window.recipeCatalog = [
   {
     id: 97,
     name: 'Шоколадное суфле',
+    url: 'https://food.ru/recipes/55198-vkusnoe-shokoladnoe-sufle',
     cuisine: 'Французская',
     meal_type: 'dessert',
     cooking_time_min: 40,
@@ -30,6 +32,7 @@ window.recipeCatalog = [
   {
     id: 98,
     name: 'Сэндвичи со свеклой, рикоттой и зеленью',
+    url: 'https://food.ru/recipes/178754-sendvich-domashnii',
     cuisine: 'Европейская',
     meal_type: 'snack',
     cooking_time_min: 10,
@@ -44,6 +47,7 @@ window.recipeCatalog = [
   {
     id: 99,
     name: 'Сэндвичи с тунцом и чесночным соусом',
+    url: 'https://food.ru/recipes/109367-bystrye-sendvichi',
     cuisine: 'Американская',
     meal_type: 'snack',
     cooking_time_min: 20,
@@ -58,6 +62,7 @@ window.recipeCatalog = [
   {
     id: 100,
     name: 'Тост с авокадо и крабовыми палочками',
+    url: 'https://food.ru/recipes/271704-tost-s-avokado-i-krabovymi-palochkami',
     cuisine: 'Американская',
     meal_type: 'breakfast',
     cooking_time_min: 15,
@@ -72,6 +77,7 @@ window.recipeCatalog = [
   {
     id: 101,
     name: 'Клубничный овсяноблин с бананом',
+    url: 'https://food.ru/recipes/271703-klubnichnyi-ovsjanoblin-s-bananom',
     cuisine: 'Русская',
     meal_type: 'breakfast',
     cooking_time_min: 25,
@@ -86,6 +92,7 @@ window.recipeCatalog = [
   {
     id: 102,
     name: 'Запеченный омлет с треской',
+    url: 'https://food.ru/recipes/271053-zapechennaja-s-omletom-treska',
     cuisine: 'Русская',
     meal_type: 'dinner',
     cooking_time_min: 35,
@@ -100,6 +107,7 @@ window.recipeCatalog = [
   {
     id: 103,
     name: 'Зеленый омлет в духовке',
+    url: 'https://food.ru/recipes/271785-zelenyi-omlet-v-duhovke',
     cuisine: 'Европейская',
     meal_type: 'breakfast',
     cooking_time_min: 35,
@@ -114,6 +122,7 @@ window.recipeCatalog = [
   {
     id: 68,
     name: 'Сэндвичи с горбушей и яйцом',
+    url: 'https://food.ru/recipes/ingredienty/recepty-s-jaicom-i-rybnymi-konservami',
     cuisine: 'Русская',
     meal_type: 'snack',
     cooking_time_min: 10,
@@ -128,6 +137,7 @@ window.recipeCatalog = [
   {
     id: 69,
     name: 'Кофейная овсянка',
+    url: 'https://food.ru/recipes/272592-kofeinaja-ovsjanka',
     cuisine: 'Европейская',
     meal_type: 'breakfast',
     cooking_time_min: 15,
@@ -142,6 +152,7 @@ window.recipeCatalog = [
   {
     id: 70,
     name: 'Горячие тосты с яичным салатом',
+    url: 'https://food.ru/recipes/272585-gorjachie-tosty-s-jaichnym-salatom',
     cuisine: 'Европейская',
     meal_type: 'breakfast',
     cooking_time_min: 30,
@@ -156,6 +167,7 @@ window.recipeCatalog = [
   {
     id: 71,
     name: 'Тост с творожным сыром и перепелиным яйцом',
+    url: 'https://food.ru/recipes/zakuski/gorjachie-buterbrody?type_meal_ids=195',
     cuisine: 'Европейская',
     meal_type: 'breakfast',
     cooking_time_min: 25,
@@ -170,6 +182,7 @@ window.recipeCatalog = [
   {
     id: 72,
     name: 'Манник на сметане со сгущенкой',
+    url: 'https://food.ru/recipes/269518-smetannik-na-manke-1766305795',
     cuisine: 'Русская',
     meal_type: 'dessert',
     cooking_time_min: 70,
@@ -184,6 +197,7 @@ window.recipeCatalog = [
   {
     id: 73,
     name: 'Блины на майонезе',
+    url: 'https://food.ru/recipes/271299-bliny-na-maioneze',
     cuisine: 'Русская',
     meal_type: 'breakfast',
     cooking_time_min: 30,
@@ -198,6 +212,7 @@ window.recipeCatalog = [
   {
     id: 74,
     name: 'Творожные вафли с ягодами и медом',
+    url: 'https://food.ru/recipes/271817-tvorozhnye-vafli-s-jagodami-i-medom',
     cuisine: 'Европейская',
     meal_type: 'breakfast',
     cooking_time_min: 30,
@@ -212,6 +227,7 @@ window.recipeCatalog = [
   {
     id: 75,
     name: 'Морковные тортильи с курицей и авокадо',
+    url: 'https://food.ru/recipes/271816-morkovnye-tortili-s-kuricei-i-avokado',
     cuisine: 'Европейская',
     meal_type: 'lunch',
     cooking_time_min: 40,
@@ -226,6 +242,7 @@ window.recipeCatalog = [
   {
     id: 76,
     name: 'Кексы на апельсиновом соке',
+    url: 'https://food.ru/recipes/271149-keksy-na-apelsinovom-soke',
     cuisine: 'Американская',
     meal_type: 'dessert',
     cooking_time_min: 75,
@@ -240,6 +257,7 @@ window.recipeCatalog = [
   {
     id: 77,
     name: 'Свекольный суп на кокосовом молоке',
+    url: 'https://food.ru/recipes/272803-svekolnyi-sup-na-kokosovom-moloke',
     cuisine: 'Европейская',
     meal_type: 'lunch',
     cooking_time_min: 70,
@@ -254,6 +272,7 @@ window.recipeCatalog = [
   {
     id: 78,
     name: 'Густой овощной суп со спаржей',
+    url: 'https://food.ru/recipes/272791-gustoi-ovoshchnoi-sup-so-sparzhei',
     cuisine: 'Европейская',
     meal_type: 'lunch',
     cooking_time_min: 50,
@@ -268,6 +287,7 @@ window.recipeCatalog = [
   {
     id: 79,
     name: 'Картофельная бабка',
+    url: 'https://food.ru/recipes/231027-kartofelnaja-babka-s-salom',
     cuisine: 'Белорусская',
     meal_type: 'dinner',
     cooking_time_min: 100,
@@ -282,6 +302,7 @@ window.recipeCatalog = [
   {
     id: 80,
     name: 'Грибной суп с фунчозой',
+    url: 'https://food.ru/recipes/272780-gribnoi-sup-s-funchozoi',
     cuisine: 'Азиатская',
     meal_type: 'lunch',
     cooking_time_min: 65,
@@ -296,6 +317,7 @@ window.recipeCatalog = [
   {
     id: 81,
     name: 'Свинина в соевом соусе',
+    url: 'https://food.ru/recipes/204601-svinina-v-soevom-souse-v-duhovke',
     cuisine: 'Азиатская',
     meal_type: 'dinner',
     cooking_time_min: 200,
@@ -310,6 +332,7 @@ window.recipeCatalog = [
   {
     id: 104,
     name: 'Пирог из пшена с овощами',
+    url: 'https://food.ru/recipes/265540-ovoshchnoi-pirog-solnce',
     cuisine: 'Русская',
     meal_type: 'dinner',
     cooking_time_min: 90,
@@ -324,6 +347,7 @@ window.recipeCatalog = [
   {
     id: 82,
     name: 'Тако с курицей и сальсой из ананаса',
+    url: 'https://food.ru/recipes/272565-tako-s-kuricei-i-salsoi-iz-ananasa',
     cuisine: 'Мексиканская',
     meal_type: 'dinner',
     cooking_time_min: 40,
@@ -338,6 +362,7 @@ window.recipeCatalog = [
   {
     id: 83,
     name: 'Свиной шашлык в гранатовом маринаде',
+    url: 'https://food.ru/recipes/260810-shashlyk-v-granatovom-marinade-1756459029',
     cuisine: 'Кавказская',
     meal_type: 'dinner',
     cooking_time_min: 180,
@@ -352,6 +377,7 @@ window.recipeCatalog = [
   {
     id: 84,
     name: 'Картофельное суфле с беконом и помидором',
+    url: 'https://food.ru/recipes/198564-kartoshechka-kak-u-babushki-1700150099',
     cuisine: 'Европейская',
     meal_type: 'dinner',
     cooking_time_min: 100,
@@ -366,6 +392,7 @@ window.recipeCatalog = [
   {
     id: 85,
     name: 'Хлебный пирог для пикника',
+    url: 'https://food.ru/recipes/272542-hlebnyi-pirog-dlja-piknika',
     cuisine: 'Европейская',
     meal_type: 'snack',
     cooking_time_min: 200,
@@ -380,6 +407,7 @@ window.recipeCatalog = [
   {
     id: 86,
     name: 'Шампиньоны с сыром в беконе',
+    url: 'https://food.ru/recipes/145440-farshirovannye-shampinony-v-bekone-1657920598',
     cuisine: 'Русская',
     meal_type: 'snack',
     cooking_time_min: 55,
@@ -394,6 +422,7 @@ window.recipeCatalog = [
   {
     id: 87,
     name: 'Куриные ножки с гречкой в духовке',
+    url: 'https://food.ru/recipes/vtorye-bliuda/kurica-v-duhovke?calories=up_to_200',
     cuisine: 'Русская',
     meal_type: 'dinner',
     cooking_time_min: 55,
@@ -408,6 +437,7 @@ window.recipeCatalog = [
   {
     id: 88,
     name: 'Запеченный картофель с брокколи и соусом дзадзики',
+    url: 'https://food.ru/recipes/272666-zapechenyi-kartofel-s-brokkoli-i-sousov-dzadzyki',
     cuisine: 'Греческая',
     meal_type: 'dinner',
     cooking_time_min: 20,
@@ -422,6 +452,7 @@ window.recipeCatalog = [
   {
     id: 89,
     name: 'Бургер на хрустящей капусте',
+    url: 'https://food.ru/recipes/271282-burger-s-dvoynoy-kotletoy',
     cuisine: 'Американская',
     meal_type: 'dinner',
     cooking_time_min: 50,
@@ -436,6 +467,7 @@ window.recipeCatalog = [
   {
     id: 90,
     name: 'Капустная лазанья',
+    url: 'https://food.ru/recipes/257771-lazania-s-ovoshchami-1752949342',
     cuisine: 'Русская',
     meal_type: 'dinner',
     cooking_time_min: 80,
@@ -450,6 +482,7 @@ window.recipeCatalog = [
   {
     id: 91,
     name: 'Паста с овощами в одной сковороде',
+    url: 'https://food.ru/recipes/236682-pasta-s-ovoshchami-1733319354',
     cuisine: 'Итальянская',
     meal_type: 'dinner',
     cooking_time_min: 30,
@@ -464,6 +497,7 @@ window.recipeCatalog = [
   {
     id: 92,
     name: 'Энчилада с курицей и чили',
+    url: 'https://food.ru/recipes/272051-Enchilada-s-kuricei-i-chili',
     cuisine: 'Мексиканская',
     meal_type: 'dinner',
     cooking_time_min: 50,
@@ -478,6 +512,7 @@ window.recipeCatalog = [
   {
     id: 93,
     name: 'Курица с черносливом в томатном соусе',
+    url: 'https://food.ru/recipes/271749-kurica-s-tomatami-i-chernoslivom',
     cuisine: 'Европейская',
     meal_type: 'dinner',
     cooking_time_min: 40,
@@ -492,6 +527,7 @@ window.recipeCatalog = [
   {
     id: 94,
     name: 'Запеченная паста с колбасками',
+    url: 'https://food.ru/recipes/vtorye-bliuda/makarony-s-kolbasoi',
     cuisine: 'Европейская',
     meal_type: 'dinner',
     cooking_time_min: 85,
@@ -506,6 +542,7 @@ window.recipeCatalog = [
   {
     id: 95,
     name: 'Котлеты-сердечки',
+    url: 'https://food.ru/recipes/271702-kotlety-serdechki',
     cuisine: 'Русская',
     meal_type: 'dinner',
     cooking_time_min: 40,
@@ -520,6 +557,7 @@ window.recipeCatalog = [
   {
     id: 96,
     name: 'Хачапури-бургеры',
+    url: 'https://food.ru/recipes/271014-hachapuri-burger',
     cuisine: 'Грузинская',
     meal_type: 'dinner',
     cooking_time_min: 120,
@@ -534,6 +572,7 @@ window.recipeCatalog = [
   {
     id: 105,
     name: 'Крупенник из гречки',
+    url: 'https://food.ru/recipes/271136-krupennik-iz-grechki',
     cuisine: 'Русская',
     meal_type: 'dessert',
     cooking_time_min: 65,
@@ -548,6 +587,7 @@ window.recipeCatalog = [
   {
     id: 106,
     name: 'Капустные вареники',
+    url: 'https://food.ru/recipes/vtorye-bliuda/vareniki?calories=up_to_200',
     cuisine: 'Украинская',
     meal_type: 'dinner',
     cooking_time_min: 60,
@@ -562,6 +602,7 @@ window.recipeCatalog = [
   {
     id: 107,
     name: 'Конвертик из куриного фарша с томатами и сыром',
+    url: 'https://food.ru/recipes/271811-kurinye-konvertiki-s-tomatami-i-syrom',
     cuisine: 'Европейская',
     meal_type: 'dinner',
     cooking_time_min: 40,
@@ -576,6 +617,7 @@ window.recipeCatalog = [
   {
     id: 108,
     name: 'Энчилада с фаршем и фасолью',
+    url: 'https://food.ru/recipes/272052-enchilada-s-farshem',
     cuisine: 'Мексиканская',
     meal_type: 'dinner',
     cooking_time_min: 40,
@@ -590,6 +632,7 @@ window.recipeCatalog = [
   {
     id: 109,
     name: 'Куриный суп с белой фасолью',
+    url: 'https://food.ru/recipes/190210-sup-fasolevyi-s-kuritsei',
     cuisine: 'Грузинская',
     meal_type: 'lunch',
     cooking_time_min: 60,
@@ -604,6 +647,7 @@ window.recipeCatalog = [
   {
     id: 110,
     name: 'Суп с машем и фрикадельками',
+    url: 'https://food.ru/recipes/271855-sup-s-mashem-i-frikdelkami',
     cuisine: 'Ближневосточная',
     meal_type: 'lunch',
     cooking_time_min: 70,
@@ -618,6 +662,7 @@ window.recipeCatalog = [
   {
     id: 111,
     name: 'Томатный суп с фасолью и курицей',
+    url: 'https://food.ru/recipes/270786-tomatnyi-sup-s-fasoliu-i-kuricei',
     cuisine: 'Европейская',
     meal_type: 'lunch',
     cooking_time_min: 60,
@@ -632,6 +677,7 @@ window.recipeCatalog = [
   {
     id: 112,
     name: 'Ананас, фаршированный креветками',
+    url: 'https://food.ru/recipes/100639-ris-po-vetnamski-s-krevetkami-i-ananasom-1643303035',
     cuisine: 'Азиатская',
     meal_type: 'dinner',
     cooking_time_min: 100,
@@ -646,6 +692,7 @@ window.recipeCatalog = [
   {
     id: 113,
     name: 'Курица в цитрусовом маринаде',
+    url: 'https://food.ru/recipes/242756-bedryshki-kurinye-v-gorchichno-chesnochnom-marinade-1738323240',
     cuisine: 'Европейская',
     meal_type: 'dinner',
     cooking_time_min: 210,
@@ -660,6 +707,7 @@ window.recipeCatalog = [
   {
     id: 114,
     name: 'Перловая каша в топленом молоке с курицей и сыром',
+    url: 'https://food.ru/recipes/271609-perlovaja-kasha-v-toplenom-moloke-s-kuricei-i-syrom-',
     cuisine: 'Русская',
     meal_type: 'dinner',
     cooking_time_min: 80,
@@ -674,6 +722,7 @@ window.recipeCatalog = [
   {
     id: 115,
     name: 'Ризотто из пшена с креветками',
+    url: 'https://food.ru/recipes/271608-rizotto-iz-pshena-s-krevetkami-',
     cuisine: 'Итальянская',
     meal_type: 'dinner',
     cooking_time_min: 60,
@@ -688,6 +737,7 @@ window.recipeCatalog = [
   {
     id: 116,
     name: 'Теплый салат с брокколи, перловкой и курицей',
+    url: 'https://food.ru/recipes/271606-teplyi-salat-s-brokkoli-perlovkoi-i-kuricei-',
     cuisine: 'Европейская',
     meal_type: 'lunch',
     cooking_time_min: 70,
@@ -702,6 +752,7 @@ window.recipeCatalog = [
   {
     id: 117,
     name: 'Плов со свининой и финиками',
+    url: 'https://food.ru/recipes/212481-plov-so-svininoi-na-skovorode-1711612912',
     cuisine: 'Восточная',
     meal_type: 'dinner',
     cooking_time_min: 60,

@@ -672,9 +672,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 card.addEventListener('click', (e) => {
-                    const isTouchLayout = window.matchMedia('(max-width: 767px)').matches;
-                    if (!isTouchLayout || e.target.closest('.gm_swap_icon') || e.target.closest('.gm_delete_icon')) return;
-                    card.classList.toggle('flipped');
+                    if (e.target.closest('.gm_swap_icon') || e.target.closest('.gm_delete_icon') || e.target.closest('.gm_add_dish_btn')) return;
+                    const mealNameEl = card.querySelector('.gm_meal_title');
+                    const mealName = mealNameEl ? mealNameEl.textContent.trim() : '';
+                    const recipe = findRecipeByName(mealName);
+                    
+                    if (recipe && recipe.url) {
+                        window.open(recipe.url, '_blank');
+                    } else if (mealName) {
+                        window.open('https://food.ru/search/recipes?query=' + encodeURIComponent(mealName), '_blank');
+                    }
                 });
 
                 card.addEventListener('mousedown', (e) => {
@@ -940,6 +947,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             function openSurveyFlow(event) {
                 if (event) event.preventDefault();
+                cards1.forEach(c => c.classList.remove('selected'));
+                cards2.forEach(c => c.classList.remove('selected'));
                 generatedMenu.style.display = 'none';
                 surveyStep2.style.display = 'none';
                 surveyStep1.style.display = 'block';
@@ -1091,7 +1100,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         setPresetControlsHidden(true);
                         localStorage.setItem(profileAuthStorageKey, 'true');
                         setHeaderLoggedIn(true);
-                        showProfilePage();
+                        // showProfilePage(); // User requested not to redirect immediately
                     }, 1000); // 1 секунда имитации загрузки
                 });
             }
@@ -1443,9 +1452,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
+            function updateDailyMacros() {
+                document.querySelectorAll('.gm_grid_row').forEach(row => {
+                    let totalKcal = 0, totalProt = 0, totalFat = 0, totalCarb = 0;
+                    row.querySelectorAll('.gm_meal_card').forEach(card => {
+                        totalKcal += parseFloat(card.dataset.kcal || 0);
+                        totalProt += parseFloat(card.dataset.prot || 0);
+                        totalFat += parseFloat(card.dataset.fat || 0);
+                        totalCarb += parseFloat(card.dataset.carb || 0);
+                    });
+                    
+                    let macrosContainer = row.querySelector('.gm_day_macros');
+                    if (!macrosContainer) {
+                        macrosContainer = document.createElement('div');
+                        macrosContainer.className = 'gm_day_macros';
+                        macrosContainer.style.fontSize = '12px';
+                        macrosContainer.style.color = '#666';
+                        macrosContainer.style.marginTop = '4px';
+                        macrosContainer.style.lineHeight = '1.2';
+                        const label = row.querySelector('.gm_day_label');
+                        if (label) {
+                            // Insert it inside or right after the label
+                            if (!label.querySelector('.gm_day_macros')) {
+                                label.appendChild(macrosContainer);
+                            } else {
+                                macrosContainer = label.querySelector('.gm_day_macros');
+                            }
+                        }
+                    }
+                    
+                    if (macrosContainer) {
+                        macrosContainer.innerHTML = `
+                            <div style="font-weight: 600; color: #1A1A1A;">${Math.round(totalKcal)} ккал</div>
+                            <div style="font-size: 10px;">Б:${Math.round(totalProt)} Ж:${Math.round(totalFat)} У:${Math.round(totalCarb)}</div>
+                        `;
+                    }
+                });
+            }
+
             function syncMenuAfterRecipeChange() {
                 recalculateChartData();
                 updateMenuSummary();
+                updateDailyMacros();
                 if (chartContainer) renderChart(activeChartTab);
 
                 const activeDrawer = document.getElementById('slDrawer');
@@ -2015,9 +2063,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
             });
 
+            let tinderInitialized = false;
             function setupMobileTinderSurvey() {
                 const cuisineGrid = document.getElementById('cuisineGrid');
                 if (!cuisineGrid || !window.matchMedia('(max-width: 767px)').matches) return;
+                if (tinderInitialized) return;
+                tinderInitialized = true;
 
                 const cards = Array.from(cards1).slice(0, 10);
                 let activeIndex = 0;
@@ -2096,6 +2147,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             setupMobileTinderSurvey();
+            window.addEventListener('resize', setupMobileTinderSurvey);
 
             cards2.forEach(card => {
                 card.addEventListener('click', () => {
@@ -2413,12 +2465,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 slContent.innerHTML = recipes.map((recipe, index) => `
                     <section class="sl_recipe_group">
-                        <div class="sl_recipe_head">
-                            <div>
+                        <div class="sl_recipe_head" style="display: flex; justify-content: space-between; align-items: flex-start;">
+                            <div style="flex: 1; padding-right: 12px;">
                                 <div class="sl_recipe_meta">${escapeHtml(recipe.day)} · ${escapeHtml(recipe.label.toLowerCase())}${recipe.time ? ` · ${escapeHtml(recipe.time)}` : ''}</div>
-                                <div class="sl_recipe_title">${escapeHtml(recipe.title)}</div>
+                                <div class="sl_recipe_title" style="font-weight: 700;">${escapeHtml(recipe.title)}</div>
                             </div>
-                            <div class="sl_recipe_count">${recipe.ingredients.length}</div>
+                            <div style="display: flex; align-items: center; gap: 8px;">
+                                <div class="sl_recipe_count">${recipe.ingredients.length}</div>
+                                <button class="sl_recipe_toggle_btn" data-group="${index}" title="Снять/Выбрать все ингредиенты" style="background: none; border: none; cursor: pointer; padding: 4px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: background 0.2s;">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <polyline points="3 6 5 6 21 6"></polyline>
+                                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                    </svg>
+                                </button>
+                            </div>
                         </div>
                         <div class="sl_recipe_items">
                             ${recipe.ingredients.map((ingredient, ingredientIndex) => `
@@ -2435,15 +2495,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 `).join('');
             }
 
-            // Слушаем клик на "Собрать корзину"
-            document.getElementById('openChecklistBtn').addEventListener('click', () => {
+            // Слушаем клик на "Собрать корзину" (FAB)
+            function openShoppingListDrawer() {
                 if (finalBuyBtn) {
                     updateMenuSummary();
                 }
                 renderRecipeCart();
                 slOverlay.style.display = 'block';
                 setTimeout(() => slDrawer.classList.add('active'), 10);
-            });
+            }
+
+            const openChecklistBtn = document.getElementById('openChecklistBtn');
+            if (openChecklistBtn) openChecklistBtn.addEventListener('click', openShoppingListDrawer);
 
             // Закрытие списка
             const closeSl = () => {
@@ -2453,11 +2516,55 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('closeSl').addEventListener('click', closeSl);
             slOverlay.addEventListener('click', closeSl);
 
-            // Клик по товарам (галочки)
+            // Клик по товарам (галочки) и кнопке удаления
             slContent.addEventListener('click', (e) => {
+                const toggleBtn = e.target.closest('.sl_recipe_toggle_btn');
+                if (toggleBtn) {
+                    const groupIndex = toggleBtn.getAttribute('data-group');
+                    const items = slContent.querySelectorAll(`.sl_item[data-recipe-index="${groupIndex}"]`);
+                    const allUnchecked = Array.from(items).every(item => !item.classList.contains('checked'));
+                    
+                    items.forEach(item => {
+                        if (allUnchecked) {
+                            item.classList.add('checked');
+                        } else {
+                            item.classList.remove('checked');
+                        }
+                    });
+                    
+                    const svg = toggleBtn.querySelector('svg');
+                    if (svg) {
+                        if (allUnchecked) {
+                            svg.innerHTML = '<polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>'; // trash icon
+                            svg.setAttribute('stroke', '#999');
+                        } else {
+                            svg.innerHTML = '<line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>'; // plus icon
+                            svg.setAttribute('stroke', '#398829');
+                        }
+                    }
+                    return;
+                }
+
                 const item = e.target.closest('.sl_item');
                 if (!item) return;
                 item.classList.toggle('checked');
+                
+                // Проверяем, сняли ли все галочки в группе, чтобы поменять иконку корзины
+                const groupIndex = item.getAttribute('data-recipe-index');
+                if (groupIndex) {
+                    const items = slContent.querySelectorAll(`.sl_item[data-recipe-index="${groupIndex}"]`);
+                    const allUnchecked = Array.from(items).every(i => !i.classList.contains('checked'));
+                    const btnSvg = slContent.querySelector(`.sl_recipe_toggle_btn[data-group="${groupIndex}"] svg`);
+                    if (btnSvg) {
+                        if (allUnchecked) {
+                            btnSvg.innerHTML = '<line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line>'; // plus icon
+                            btnSvg.setAttribute('stroke', '#398829');
+                        } else {
+                            btnSvg.innerHTML = '<polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>'; // trash icon
+                            btnSvg.setAttribute('stroke', '#999');
+                        }
+                    }
+                }
             });
 
             // Финальная покупка
